@@ -38,6 +38,7 @@ export default class Content extends Component {
                 <br/><br/>
                 <input type="text" onChange={this.onChange.bind(this)}/>
                 <h1>{this.state.type}</h1>
+                <br/><a href="/"><button class="btn btn-outline-success">back</button></a>
             </div>
         )
     }

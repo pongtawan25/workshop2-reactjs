@@ -23,6 +23,7 @@ export default class Header extends Component {
         <h1>{this.state.name}</h1>
         <h3>Timer: {this.state.count}</h3>
         <button onClick={this.setStart} type="button" class="btn btn-outline-primary">Start</button>
+        <br/><a href="/"><button class="btn btn-outline-success">back</button></a>
       </div>
     );
   }

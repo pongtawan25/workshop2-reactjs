@@ -1,17 +1,29 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Header from './components/Header'
-import Content from './components/Content'
-import Footer from './components/Footer'
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+  
+    this.state = {
+       title:"React",
+       count:0
+    }
+  }
+
   render() {
+    setTimeout(()=>{
+      this.setState({title:"Test"});
+    },1000);
+    setInterval(()=>{
+      this.setState({count:this.state.count+1})
+    },100);
     return (
       <div className="App">
-        <Header/>
-        <Content/>
-        <Footer/>
+        <h1 onChange={this.setTimeout}>{this.state.title}</h1><span>{this.state.count}%</span>
+        <h1><a href="/header">Header</a></h1>
+        <h1><a href="/content">Content</a></h1>
+        <h1><a href="/footer">Footer</a></h1>
       </div>
     );
   }
