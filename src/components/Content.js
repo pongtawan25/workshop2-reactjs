@@ -24,12 +24,20 @@ export default class Content extends Component {
         this.setState({data:myArray})
     }
 
+    onChange(event){
+        this.setState({type:event.target.value})
+    }
+
     render() {
         return (
             <div>
+                <br/><br/>
                 <button onClick={this.changeMessage} type="button" class="btn btn-primary">{this.state.message}</button>
                 <h1>{this.state.data}</h1>
                 <button onClick={this.insertData} type="button" class="btn btn-primary">Insert</button>
+                <br/><br/>
+                <input type="text" onChange={this.onChange.bind(this)}/>
+                <h1>{this.state.type}</h1>
             </div>
         )
     }
